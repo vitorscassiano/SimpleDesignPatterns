@@ -1,3 +1,3 @@
-DesignPatters GURU
+DesignPatterns GURU
 
 From: https://refactoring.guru/
