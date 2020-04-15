@@ -7,7 +7,6 @@ class Abstract(ABC):
         self.second()
         self.third()
 
-    @abstractmethod
     def first(self):
         print("First")
 
@@ -21,7 +20,6 @@ class Abstract(ABC):
 class ConcreteClass(Abstract):
     def third(self):
         print("Other third")
-
 
 if __name__ == "__main__":
     concrete = ConcreteClass()
