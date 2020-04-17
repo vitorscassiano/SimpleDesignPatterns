@@ -1,24 +1,20 @@
 from functools import wraps
-# def decorator(f):
-#   @wraps(f)
-#   def wrapper(*args, **kwargs):
-#       print(args)
-#       f()
-#       print(kwargs)
-#   return wrapper
+from typing import Callable
 
-def decorator(f):
-  def wrapper(*args, **kwargs):
-    print("Before")
-    f(*args, **kwargs)
-    print("After")
-    return
-  return decorator
+
+def decorator(f: Callable):
+    def wrapper(*args, **kwargs) -> None:
+        print("Before")
+        msg = f(args[0])
+        print(msg)
+        print("After")
+    return wrapper
 
 @decorator
-def hello(name: str):
-  return f"Hello {name}!"
+def hello(name: str) -> str:
+    return f"Hello {name}!"
+
 
 # Main
-msg = hello("Vitor")
-print(msg())
+if __name__ == "__main__":
+    hello("Vitor")
